@@ -1,5 +1,4 @@
 call plug#begin()
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'rcarriga/nvim-notify'
@@ -12,32 +11,20 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'glepnir/dashboard-nvim'
-Plug 'mhinz/vim-startify'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'MunifTanjim/nui.nvim'
 Plug 'VonHeikemen/fine-cmdline.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'alanfortlink/blackjack.nvim'
-
-
-
-
 Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'goolord/alpha-nvim'
 
-
+Plug 'cocopon/iceberg.vim'
 call plug#end()
 lua require("toggleterm").setup()
 
-" Themes """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"colorscheme catppuccin-mocha
-
-colorscheme moonfly
-
-
-
-lua require'colorizer'.setup()
-
+colorscheme iceberg
 
 
 
@@ -79,9 +66,7 @@ nmap <SPACE><TAB> ::FineCmdline<CR>
 nmap <C-z> :u<CR>
 nmap <C-A> ggVG<CR>
 nmap <C-p> :tabe<CR>
-
-            
-let g:startify_enable = 0
+ 
 
 """""MOVIMENTACAO"
 nmap <C-j> }<CR>
@@ -93,47 +78,54 @@ nnoremap <C-l> $
 
 
 
-"Autocmd"""""""""""""""""""""""""
-" Mude as configurações conforme necessário
-
-" Mude as configurações conforme necessário
-
-
-" No VimScript (init.vim)
-
-" Carrega o plugin nvim-cmp
-
-"Airline''''''''''''''''''''''''"
 
 
 
-let g:startify_custom_header = ['',
-      \ '   ⢸⠉⣹⠋⠉⢉⡟⢩⢋⠋⣽⡻⠭⢽⢉⠯⠭⠭⠭⢽⡍⢹⡍⠙⣯⠉⠉⠉⠉⠉⣿⢫⠉⠉⠉⢉⡟⠉⢿⢹⠉⢉⣉⢿⡝⡉⢩⢿⣻⢍⠉⠉⠩⢹⣟⡏⠉⠹⡉⢻⡍⡇',
-      \ '   ⢸⢠⢹⠀⠀⢸⠁⣼⠀⣼⡝⠀⠀⢸⠘⠀⠀⠀⠀⠈⢿⠀⡟⡄⠹⣣⠀⠀⠐⠀⢸⡘⡄⣤⠀⡼⠁⠀⢺⡘⠉⠀⠀⠀⠫⣪⣌⡌⢳⡻⣦⠀⠀⢃⡽⡼⡀⠀⢣⢸⠸⡇',
-      \ '   ⢸⡸⢸⠀⠀⣿⠀⣇⢠⡿⠀⠀⠀⠸⡇⠀⠀⠀⠀⠀⠘⢇⠸⠘⡀⠻⣇⠀⠀⠄⠀⡇⢣⢛⠀⡇⠀⠀⣸⠇⠀⠀⠀⠀⠀⠘⠄⢻⡀⠻⣻⣧⠀⠀⠃⢧⡇⠀⢸⢸⡇⡇',
-      \ '   ⢸⡇⢸⣠⠀⣿⢠⣿⡾⠁⠀⢀⡀⠤⢇⣀⣐⣀⠀⠤⢀⠈⠢⡡⡈⢦⡙⣷⡀⠀⠀⢿⠈⢻⣡⠁⠀⢀⠏⠀⠀⠀⢀⠀⠄⣀⣐⣀⣙⠢⡌⣻⣷⡀⢹⢸⡅⠀⢸⠸⡇⡇',
-      \ '   ⢸⡇⢸⣟⠀⢿⢸⡿⠀⣀⣶⣷⣾⡿⠿⣿⣿⣿⣿⣿⣶⣬⡀⠐⠰⣄⠙⠪⣻⣦⡀⠘⣧⠀⠙⠄⠀⠀⠀⠀⠀⣨⣴⣾⣿⠿⣿⣿⣿⣿⣿⣶⣯⣿⣼⢼⡇⠀⢸⡇⡇⠇',
-      \ '   ⢸⢧⠀⣿⡅⢸⣼⡷⣾⣿⡟⠋⣿⠓⢲⣿⣿⣿⡟⠙⣿⠛⢯⡳⡀⠈⠓⠄⡈⠚⠿⣧⣌⢧⠀⠀⠀⠀⠀⣠⣺⠟⢫⡿⠓⢺⣿⣿⣿⠏⠙⣏⠛⣿⣿⣾⡇⢀⡿⢠⠀⡇',
-      \ '   ⢸⢸⠀⢹⣷⡀⢿⡁⠀⠻⣇⠀⣇⠀⠘⣿⣿⡿⠁⠐⣉⡀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠓⠳⠄⠀⠀⠀⠀⠋⠀⠘⡇⠀⠸⣿⣿⠟⠀⢈⣉⢠⡿⠁⣼⠁⣼⠃⣼⠀⡇',
-      \ '   ⢸⠀⡟⠀⢸⡆⢹⡜⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠋⣾⡏⡇⡎⡇⠀⡇',
-      \ '   ⢸⠀⢃⡆⠀⢿⡄⠑⢽⣄⠀⠀⠀⢀⠂⠠⢁⠈⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠄⡐⢀⠂⠀⠀⣠⣮⡟⢹⣯⣸⣱⠁⠀⡇',
-      \ '   ⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁']
-
-
-
-
-lua << END
-
-
-require('lualine').setup()
+lua << EOF
+-- Configuração do lualine
 require('lualine').setup {
-  options = { theme  = 'iceberg_light' }, --Luanline theme
-  ...
+  options = { theme  = 'iceberg_light' }
 }
 
-require("nvim-autopairs").setup {} --Multiplos caracterest.. Ex []
+-- Configuração do nvim-autopairs
+require("nvim-autopairs").setup {}
 
 
-END
 
 
+
+EOF
+
+lua << EOF
+  local alpha = require('alpha')
+  local dashboard = require('alpha.themes.dashboard')
+
+  dashboard.section.header.val = {'','','','',
+    '  ⠀⠀⠀⠀⠀⠀⢀⣤⣶⣶⣖⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀',
+    '  ⠀⠀⠀⠀⢀⣾⡟⣉⣽⣿⢿⡿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀  ',
+    '  ⠀⠀⠀⢠⣿⣿⣿⡗⠋⠙⡿⣷⢌⣿⣿⠀⠀⠀⠀⠀⠀⠀  ',
+    ' ⣷⣄⣀⣿⣿⣿⣿⣷⣦⣤⣾⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀ ',
+    '⠀ ⠈⠙⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠀ ⠀⠀⠀⠀',
+    ' ⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠻⠿⠿⠋⠀⠀⠀⠀',
+    ' ⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀',
+    ' ⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⡄',
+    ' ⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⢀⡾⠀',
+    ' ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣷⣶⣴⣾⠏⠀⠀',
+    ' ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠋⠁⠀⠀⠀',
+
+
+  }
+
+  dashboard.section.buttons.val = {
+    dashboard.button("SPC e", "󰈔  Menu files", ":NERDTreeToggle<CR>"),
+    dashboard.button("SPACE tab", " Search", ":FineCmdline<CR>"),
+    dashboard.button("SPC f", "  Recently opened files", ":Telescope oldfiles<CR>"),
+    dashboard.button("SPC f f", "  Find File", ":Telescope find_files<CR>"),
+    dashboard.button("SPC f b", "  File Browser", ":Telescope file_browser<CR>"),
+    dashboard.button("q", "󰿅  Exit", ":q<CR>"),
+  }
+
+  dashboard.section.footer.val = {'█ █ █ █ █'}
+
+  alpha.setup(dashboard.opts)
+EOF
