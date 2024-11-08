@@ -20,8 +20,8 @@ require('packer').startup(function(use)
     'VonHeikemen/fine-cmdline.nvim',
     'goolord/alpha-nvim',
     {'akinsho/toggleterm.nvim', tag = 'v11.*'},
-    {'nvim-telescope/telescope.nvim', tag = '9.1.5'},
     'olivercederborg/poimandres.nvim',
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
   }
 
 
