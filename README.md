@@ -1,6 +1,5 @@
 # neovim-dotfiles
 My neovim configuration
 
-
-![image](https://github.com/user-attachments/assets/3495f30b-461a-4688-ad25-47dc78b726e9)
+![image](https://github.com/user-attachments/assets/afdf506a-b63e-455b-91ec-d6cd7ea365d3)
 
