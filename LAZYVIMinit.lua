@@ -30,7 +30,7 @@ require("lazy").setup({
     },
 
 
-    { 'windwp/nvim-autopairs', config = true }, -- 'config = true' chama o setup() automaticamente
+    { 'windwp/nvim-autopairs', config = true },
     'mg979/vim-visual-multi',
     'VonHeikemen/fine-cmdline.nvim',
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
@@ -66,7 +66,7 @@ vim.opt.cursorline = true
 
 vim.cmd('syntax on')
 vim.cmd('filetype plugin indent on')
-vim.cmd([[ colorscheme dev ]]) -- Certifique-se que o tema 'dev' está instalado
+vim.cmd([[ colorscheme dev ]])
 vim.cmd [[ let g:SuperTabDefaultCompletionType = '<C-n>' ]]
 
 local map = vim.keymap.set
