@@ -98,7 +98,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Autocomando para Python (pyright)
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "python",
   callback = function()
@@ -106,7 +105,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Autocomando para JS/TS (tsserver)
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {"javascript","typescript"},
   callback = function()
@@ -115,9 +114,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 
---===============================
---Colorscheme
---===============================
 
 vim.cmd([[
     colorscheme dev
@@ -213,7 +209,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Autocomando para Python (pyright)
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "python",
   callback = function()
@@ -221,18 +217,12 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Autocomando para JS/TS (tsserver)
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {"javascript","typescript"},
   callback = function()
     vim.lsp.start(vim.lsp.config.tsserver)
   end,
 })
-
-
---===============================
---Colorscheme
---===============================
 
 vim.cmd([[
     colorscheme dev
